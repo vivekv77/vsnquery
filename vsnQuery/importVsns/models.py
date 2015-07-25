@@ -1,6 +1,7 @@
 from django.db import models
 
 class VSNData(models.Model):
+    Indexed_SNP = models.CharField(max_length=100)	
     SerialNumberPattern = models.CharField(max_length=12)
     VehicleTrimId = models.IntegerField()
     Year = models.IntegerField()

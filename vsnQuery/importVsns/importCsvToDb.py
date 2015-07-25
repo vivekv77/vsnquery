@@ -17,7 +17,13 @@ with open('./importVsns/vsn_data_noheader.csv', 'rb') as csvfile:
     
     # loop over lines of array, one at time and save into db
     for row in VsnInputArray:
-        dbEntry = VSNData(SerialNumberPattern=row[0], VehicleTrimId=row[1], Year=row[2], Make=row[3], Model=row[4], TrimName=row[5])
+        a=str(row[0])
+        a1=a[0:6]
+        a2=a[6:12]
+        mod_a1=a1.replace("*","[A-Z*]")
+        mod_a2=a2.replace("*","[0-9*]")
+        mod_a = mod_a1 + mod_a2
+        dbEntry = VSNData(Indexed_SNP=mod_a, SerialNumberPattern=str(row[0]), VehicleTrimId=int(row[1]), Year=int(row[2]), Make=str(row[3]), Model=str(row[4]), TrimName=str(row[5]))
         dbEntry.save()
 
 print "\nImport from CSV to VSNData db is complete...\n"
