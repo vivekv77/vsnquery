@@ -51,24 +51,25 @@ Dependencies (packages/modules):
 
 Installation Requirements (tested and listed only on MAC OSX Yosemite):
 
-Note: other platforms with VMs/Docker installation steps are to be done, TBD.
+Note: Use 'sudo' with some of below instructions in case of issues with permissions to root related paths, assuming you have sudo access. Other platforms with VMs/Docker installation steps are to be done, TBD.
+
 
 1) Open up a mac terminal (OSX 10.10.4)
 
-2) Set up basic environment: https://docs.djangoproject.com/en/1.8/topics/install/ 
+2) Clone the git repo: 'git clone https://github.com/vivekv77/vsnquery.git'
+
+3) Set up basic environment: https://docs.djangoproject.com/en/1.8/topics/install/ 
 
 a) python
 
-b) pip
+b) pip : use the file 'get-pip.py' in top folder to do: 'python get-pip.py'
 
-c) django: 'sudo python setup.py install'
+c) django: 'pip install Django==1.8.3'
 
 
-3) Install gunicorn: 'pip install gunicorn'
+4) Install gunicorn: 'pip install gunicorn'
 
-4) Validate that django is installed: 'python -c "import django; print(django.get_version())"'
-
-5) Clone the git repo: git clone 'https://github.com/vivekv77/vsnquery.git'
+5) Validate that django is installed: 'python -c "import django; print(django.get_version())"'
 
 6) Delete any existing migration folders under vsnquery/vsnQuery/importVsns and delete db.sqlite3 file under vsnquery/vsnQuery
 
