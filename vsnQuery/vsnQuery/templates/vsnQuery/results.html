@@ -1,0 +1,29 @@
+{% comment "We can really make this fancy with a table showing the result, or an ordered list, etc. Keeping it simple for now %}
+{% endcomment %}
+
+{% load static from staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'vsnQuery/style.css' %}" />
+
+{% if results %}
+    {% if not results.SerialNumberPattern %}
+        <h1>No Result Found! </h1>
+    {% else %}
+        <h1>Result found! </h1>
+        <p>
+        <p>Serial Number Pattern: {{ results.SerialNumberPattern }}</p>
+        <p>Vehicle Trim ID: {{ results.VehicleTrimId }}</p>
+        <p>Vehicle Year: {{ results.Year }}</p>
+        <p>Vehicle Make: {{ results.Make }}</p>
+        <p>Vehicle Model: {{ results.Model }}</p>
+        <p>Vehicle Trim Name: {{ results.TrimName }}</p>
+    {% endif %}
+{% else %}
+    <h1>Please enter a valid VSN !! </h1>
+{% endif %}
+   <br>
+   <form method="get" action="/search/">
+     Search Car Db: <input type="text" name="query" id="id_query" value="{{ query }}"/>
+     <input type="submit" value="Search" />
+   </form>
+

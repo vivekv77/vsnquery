@@ -2,4 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'vsnQuery/style.css' %}" />
 
-<h1> testing testing ! </h1>
+<form method="get" action="/search/">
+  <h1>Search Car Db:  <input type="text" name="query" id="id_query" value="{{ query }}"/>
+  <input type="submit" value="Search" /></h1>
+</form>
