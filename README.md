@@ -55,7 +55,7 @@ Note: other platforms with VMs/Docker installation steps are to be done, TBD.
 
 1) Open up a mac terminal (OSX 10.10.4)
 
-2) Set up basic environment: https://docs.djangoproject.com/en/1.8/topics/testing/overview/
+2) Set up basic environment: https://docs.djangoproject.com/en/1.8/topics/install/ 
 
 a) python
 
