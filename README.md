@@ -30,6 +30,7 @@ Assumptions:
 
 13) We assume the input VSNs to the form do not have wildcards but are full VSN numbers. The wildcard '*' are only in the csv/db
 
+14) In case of multiple equal matches, we just return the first match. We can easily improve the solution to return all matches if required/requested. For now, we assume the earliest db entry is preferred. 
 
 Dependencies (packages/modules):
 
